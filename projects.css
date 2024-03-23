@@ -1,0 +1,63 @@
+/* 'vh' stands for view height */
+/* Setting the html and body styles as follows allows us to use flexbox to center the page content vertically and horizontally */
+.tab-container {
+    margin-top: 20vh;
+
+}
+
+.card-tab {
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.tab-nav {
+    display: flex;
+    justify-content: end;
+    
+}
+
+.card-tab h2::after {
+    content: "";
+    display: inline-block;
+    width: 9vw; /* Set the width of the lines */
+    border-top: 5px solid #2007ff; /* Set the color of the lines */
+    margin: 7px 15px;
+    border-radius: 50px;
+}
+
+.tab-pane {
+    text-align: center;
+}
+
+.tab-pane a {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+    background: linear-gradient(
+      90deg,
+      rgba(37, 26, 223, 1) 0%,
+      rgba(122, 59, 235, 1) 59%,
+      rgba(145, 68, 238, 1) 100%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    border: none;
+    font-size: larger;
+    border-radius: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+  .tab-pane a:hover {
+    background: linear-gradient(
+        260deg,
+        rgba(37, 26, 223, 1) 0%,
+        rgba(122, 59, 235, 1) 59%,
+        rgba(145, 68, 238, 1) 100%,
+        rgba(0, 212, 255, 1) 100%
+      ) !important;
+  }
+@media screen and (max-width: 591px) {
+
+.nav-tabs button {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+}

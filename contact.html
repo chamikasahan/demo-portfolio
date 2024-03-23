@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/b83bb14ef8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>contact</title>
+    <script src="navigation.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <div class="container contact-container mb-3">
+      <div class="row">
+        <div class="col-lg-4">
+          <h1 class="p-5">Contact</h1>
+          <div class="contact-cards">
+            <ul style="list-style-type: none">
+              <li><i class="fa-solid fa-phone"></i> Phone:</li>
+            </ul>
+            <div class="text-center">
+              <p class="h6 text-center">+94 761 964 862</p>
+              <p class="h6 text-center">+94 770 369 821</p>
+            </div>
+          </div>
+          <div class="contact-cards mt-3">
+            <ul style="list-style-type: none">
+              <li><i class="fa-solid fa-envelope"></i> Email:</li>
+            </ul>
+            <div class="text-center">
+              <p class="h6 text-center">sahannimesha2019@gmail.com</p>
+              <p class="h6 text-center">chamikanimesha2003@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-cards mt-3 mb-3">
+            <ul style="list-style-type: none">
+              <li>
+                <i class="fa-solid fa-location-dot" style="width: 2.5rem"></i>
+                Address:
+              </li>
+            </ul>
+            <div class="text-center">
+              <p class="h6 text-center">kandy, Sri lanka</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="contact-form mx-auto" style="width: 80%">
+            <h1 class="pt-5 pb-5 text-center">Let's Work Together</h1>
+            <form
+              onsubmit="sendEmail(); reset(); return false;"
+              class="form-validate"
+              id="contact_form"
+              name="contact_form"
+              method="post"
+            >
+              <div class="mb-3">
+                <label for="email_addr">Email address</label>
+                <input
+                  type="email"
+                  required
+                  maxlength="50"
+                  class="form-control"
+                  id="email_addr"
+                  name="email"
+                  placeholder="name@example.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="name_input">Name</label>
+                <input
+                  type="text"
+                  required
+                  maxlength="50"
+                  class="form-control"
+                  id="name_input"
+                  name="name"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="select-options">Needed Service</label>
+                <select
+                  class="form-select"
+                  id="select-options"
+                  aria-label="Default select example"
+                >
+                  <option selected>Please select service</option>
+                  <option value="web_design">Web Design</option>
+                  <option value="UI/UX_design">UI/UX Design</option>
+                  <option value="Content_writing">Content Writing</option>
+                  <option value="General_inquiry">General Inquiry</option>
+                  <option value="Reviews">Reviews</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="message">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary px-4 mb-3">
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- end of  row -->
+    </div>
+    <!-- end of container -->
+
+    <div id="footer-container"></div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      // Function to send email using SMTPJS
+      function sendEmail() {
+        Email.send({
+          SecureToken: "806715a5-4441-40bb-b2bf-5eff661dc598",
+          To: "dilanprasanga52@gmail.com",
+          From: "dilanprasanga52@gmail.com",
+          Subject: "contact form Enquiry",
+          Body:
+            "Email: " +
+            document.getElementById("email_addr").value +
+            "<br> Name: " +
+            document.getElementById("name_input").value +
+            " <br> service: " +
+            document.getElementById("select-options").value +
+            "<br> Message: " +
+            document.getElementById("message").value,
+        }).then((message) => {
+          // Check if the email was sent successfully
+          if (message === "OK") {
+            // Show the custom success message
+            Swal.fire({
+              title: "Good job!",
+              text: "Your message has been successfully submitted!",
+              icon: "success",
+            });
+          } else {
+            // Handle the case where the email sending fails
+            alert("Failed to send email. Please try again.");
+          }
+        });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+  </body>
+</html>

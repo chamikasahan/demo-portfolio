@@ -1,0 +1,30 @@
+.blog-container {
+  margin-top: 8rem;
+}
+
+.blog-card {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  
+}
+
+.container-blog h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.container-blog p {
+  font-size: 1.5rem;
+}
+
+.container-blog a {
+  text-decoration: none;
+  font-weight: 600;
+}
+@media screen and (min-width: 992px) {
+  .carousel {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
